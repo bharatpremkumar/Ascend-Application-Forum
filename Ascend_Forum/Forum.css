@@ -1,0 +1,343 @@
+* {
+    box-sizing: border-box;
+  }
+
+  #box{
+    color: #B55232;
+  }
+
+  html{
+    background-color: #1b1b1b;
+  }
+
+  textarea:focus {
+      background-color: blanchedalmond;
+  }
+
+/*the size, color and font of the forum*/
+  #regForm {
+    background-color: #272727;
+    margin: 100px auto;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    padding: 40px;
+    width: 70%;
+    height: 800%;
+    min-width: 300px;
+  }
+
+/*title position*/
+  h1, h2, p {
+    text-align: center;
+  }
+
+/*title color*/
+  h1,h2{
+    color: #c49a6c;
+  }
+
+  .optionalfeild {
+      display: inline;
+  }
+
+  p{
+    font-weight: bold;
+    font-size: 20px;
+    color:#c9b49d;
+  }
+
+  input {
+    padding: 10px;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+    margin: 5px;
+  }
+
+/*Drop down inputs*/
+  select {
+ -webkit-appearance:none;
+ -moz-appearance:none;
+ -ms-appearance:none;
+ appearance:none;
+ outline:0;
+ box-shadow:none;
+ border:0!important;
+ background: #5c6664;
+ background-image: none;
+ flex: 1;
+ display: flex;
+ flex-direction: row-reverse;
+ padding: 0 .5em;
+ color:#fff;
+ cursor:pointer;
+ font-size: 1em;
+ font-family: 'Open Sans', sans-serif;
+}
+select::-ms-expand {
+ display: block;
+}
+.select {
+ position: relative;
+ display: flex;
+ width: 20em;
+ margin: 5px;
+ height: 3em;
+ width: 40%;
+ line-height: 3;
+ background: #5c6664;
+ border-radius: .25em;
+ margin: auto;
+}
+.select::after {
+ content: '\25BC';
+ position: absolute;
+ top: 0;
+ right: 0;
+ padding: 0 1em;
+ background: #2b2e2e;
+ cursor:pointer;
+ pointer-events:none;
+ transition:.25s all ease;
+}
+
+input#navnRegistreing:focus, input#mail:focus, input#nummer:focus {
+  background-color: blanchedalmond;
+}
+
+.p_element {
+  color: #eee;
+  text-align: left;
+}
+
+.select option:hover{
+display: block;
+}
+/*tabel styling*/
+table {
+border-collapse: collapse;
+width: 100%;
+}
+
+td, th {
+padding: 8px;
+color: #c49a6c;
+}
+
+th {
+text-align: left;
+}
+
+td {
+text-align: left;
+}
+
+#value {
+text-align: center;
+}
+
+tr:nth-child(even) {
+background-color: #353a39;
+}
+
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid {
+    background-color: #ffdddd;
+  }
+
+  /* Hide all steps by default: */
+  .tab {
+    display: none;
+  }
+
+/*buttons, prevbtn and nextbtn styling*/
+  button {
+    background-color: #716658;
+    color: #eee;
+    border: none;
+    padding: 15px 20px;
+    font-size: 17px;
+    border-radius: 5px;
+    font-family: Raleway;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #C49A6C;
+    transition: all 0.5s;
+  }
+
+  #prevBtn {
+    background-color: #716658;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 17px;
+    margin: 10px;
+  }
+  #prevBtn:hover {
+    background-color: #C49A6C;
+    transition: all 0.5s;
+  }
+
+  /* Make circles that indicate the steps of the form: */
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+    padding-top: 3px;
+  }
+
+/*other studys input styling*/
+  input#other_studys {
+    background-color: #716658;
+    border-radius: 5px;
+  }
+
+  input#other_studys:hover {
+   background-color:#C49A6C;
+   transition: all 0.5s;
+  }
+
+  input.reset{
+  background-color: #716658;
+  border-radius: 5px;
+  }
+
+  input.reset:hover{
+    background-color: #B55232;
+    transition: all 0.5s;
+  }
+
+  .step.active {
+    opacity: 1;
+  }
+
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: #c49a6c;
+  }
+
+  #fail{
+      color: red;
+  }
+
+  #text{
+      color: #eee;
+  }
+
+  /* The container */
+  .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  select {
+    text-align: center;
+    width: auto;
+  }
+
+  /* Hide the browser's default radio button */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #716658;
+    border-radius: 50%;
+  }
+
+/*style the help paragraph*/
+  #help{
+      color: #eee;
+      font-size: 18px;
+  }
+
+  b {
+      font-size: 18px;
+  }
+
+/*width of inputs*/
+  #mail,
+  #nummer,
+  #navnRegistreing,
+  #preview {
+    width: 50%;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #eee;
+  }
+
+  /* When the radio button is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #c49a6c;
+  }
+
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the indicator (dot/circle) when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  @media only screen and (max-width: 950px) {
+    #msg_1, #msg_2,#msg_3{
+    width: 100%;
+     }
+
+  #mail,
+  #nummer,
+  #navnRegistreing{
+    width: 100%;
+  }
+  
+  .select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    margin: 5px;
+    height: 3em;
+    width: 100%;
+    line-height: 3;
+    background: #5c6664;
+    border-radius: .25em;
+    margin: auto;
+  }
+}
+
+  /* Style the indicator (dot/circle) */
+  .container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }

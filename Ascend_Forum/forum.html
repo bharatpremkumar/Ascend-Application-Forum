@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+<link rel="stylesheet" href="Forum.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300&display=swap" rel="stylesheet">
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <script src="Forum.js"></script>
+  <form action="https://formspree.io/bharatpremkumar@gmail.com" method="POST" id="regForm">
+    <!-- One "tab" for each step in the form: -->
+    <div id="tab1" class="tab">
+
+      <!--Contact info page-->
+      <h1>Contact Information</h1>
+      <hr />
+      <label>
+        <p>
+          Name
+          <br />
+          <input placeholder="Full name..." name="From " id="navnRegistreing" class="name" />
+        </p>
+        <center>
+          <div class="error_name"></div>
+        </center>
+      </label>
+
+      <label>
+        <p>
+          E-mail
+          <br />
+          <input input="mail" placeholder="E-mail..." id="mail" name="_replyto" class="email" />
+        </p>
+        <center>
+          <div class="error_mail"></div>
+        </center>
+      </label>
+
+      <label>
+        <p>
+          Phone number
+          <br />
+          <input placeholder="Phone number..." type="text" id="nummer" name="Phonenumber" class="number" name="TLF:" />
+        </p>
+        <center>
+          <div class="error_number"></div>
+        </center>
+      </label>
+    </div>
+
+    <div id="tab2" class="tab">
+      <!--study program page-->
+
+      <h1>Choose your study program</h1>
+      <hr />
+      <br />
+      <div id="marked"></div>
+      <label class="container">
+        <p class="p_element">Kybernetikk og Robotikk</p>
+        <input type="radio" id="radio_1" name="Study field" value="I study: Kybernetikk og Robotikk" />
+        <span class="checkmark"></span>
+      </label>
+      <!--Study program-->
+      <label class="container">
+        <p class="p_element">Datateknologi</p>
+        <input type="radio" id="radio_2" id="Datateknologi" name="Study field" value="I study: Datateknologi" />
+        <span class="checkmark"></span>
+      </label>
+      <!--Study program-->
+      <label class="container">
+        <p class="p_element">Elektronisk systemdesign og innovasjon</p>
+        <input type="radio" id="radio_3" name="Study field" value="I study: Elektronisk systemdesign og
+            innovasjon" />
+        <span class="checkmark"></span>
+      </label>
+      <!--Study program-->
+      <label class="container">
+        <p class="p_element">Industriell økonomi</p>
+        <input type="radio" id="radio_4" name="Study field" value="I study: Industriell økonomi" />
+        <span class="checkmark"></span>
+      </label>
+      <!--Study program-->
+
+      <label class="container">
+        <p class="p_element">Produktutvikling og produksjon</p>
+        <input type="radio" id="radio_5" name="Study field" value="I study: Produktutvikling og produksjon" />
+        <span class="checkmark"></span>
+      </label>
+      <!--Study program-->
+
+      <label class="container">
+        <p class="p_element">Kommunikasjonsteknologi</p>
+        <input type="radio" id="radio_6" name="Study field" value="I study: Kommunikasjonsteknologi" />
+        <span class="checkmark"></span>
+      </label>
+      <!--Study program-->
+
+      <label class="container">
+        <p class="p_element">Energi og miljø</p>
+        <input type="radio" id="radio_7" name="Study field" value="Energi og miljø" />
+        <span class="checkmark"></span>
+      </label>
+      <!--Study program-->
+
+      <label class="container">
+        <p class="p_element">Bygg og miljøteknikk</p>
+        <input type="radio" id="radio_8" name="Study field" value="I study: Bygg og miljøteknikk" />
+        <span class="checkmark"></span>
+      </label>
+      <!--Study program-->
+
+      <label class="container">
+        <p class="p_element">Ingeniørvitenskap og IKT</p>
+        <input type="radio" id="radio_9" name="Study field" value="I study: Ingeniørvitenskap og IKT" />
+        <span class="checkmark"></span>
+      </label>
+      <!--Study program-->
+
+      <label class="container">
+        <p class="p_element">Fysikk og matematikk</p>
+        <input type="radio" id="radio_10" name="Study field" value="I study: Fysikk og matematikk" />
+        <span class="checkmark"></span>
+      </label>
+      <!--Study program-->
+
+      <label class="container">
+        <p class="p_element">Materialteknologi</p>
+        <input type="radio" id="radio_11" name="Study field" value="I study: Materialteknikk" />
+        <span class="checkmark"></span>
+      </label>
+      <!--Study program-->
+
+      <label class="other_program">
+        <input type="button" id="other_studys" value="Other studys? Enter here: " />
+        <div class="others" id="others"></div>
+      </label>
+      <!--Study program-->
+      <label>
+        <input class="reset" type="button" id="reset" value="Reset">
+    </div>
+    </label>
+    </div>
+    </div>
+
+    <!--script to reset and send information to formspree-->
+    <!--Send function is in js file-->
+    <script type="text/javascript">
+      //opprette element//
+      var radio_1El = document.querySelector("#radio_1");
+      var radio_2El = document.querySelector("#radio_2");
+      var radio_3El = document.querySelector("#radio_3");
+      var radio_4El = document.querySelector("#radio_4");
+      var radio_5El = document.querySelector("#radio_5");
+      var radio_6El = document.querySelector("#radio_6");
+      var radio_7El = document.querySelector("#radio_7");
+      var radio_8El = document.querySelector("#radio_8");
+      var radio_9El = document.querySelector("#radio_9");
+      var radio_10El = document.querySelector("#radio_10");
+      var radio_11El = document.querySelector("#radio_11");
+      var other_studysEl = document.querySelector("#other_studys");
+      var resetEl = document.querySelector("#reset");
+
+      radio_1El.addEventListener("click", sjekkdor);
+      radio_2El.addEventListener("click", sjekkdor);
+      radio_3El.addEventListener("click", sjekkdor);
+      radio_4El.addEventListener("click", sjekkdor);
+      radio_5El.addEventListener("click", sjekkdor);
+      radio_6El.addEventListener("click", sjekkdor);
+      radio_7El.addEventListener("click", sjekkdor);
+      radio_8El.addEventListener("click", sjekkdor);
+      radio_9El.addEventListener("click", sjekkdor);
+      radio_10El.addEventListener("click", sjekkdor);
+      radio_11El.addEventListener("click", sjekkdor);
+      other_studysEl.addEventListener("click", sjekkdor);
+      resetEl.addEventListener("click", sjekkdor)
+
+
+    </script>
+    <!--create inputfeild when btn is pressed-->
+    <!--reset btn is in js file-->
+    <script>
+      var innpakningEl = document.querySelector('.others');
+      var resetEl = document.querySelector("#reset");
+      var other_studysEl = document.querySelector("#other_studys");
+      resetEl.addEventListener("click", reset_value);
+      other_studysEl.addEventListener("click", other_studysFun);
+
+      function other_studysFun(e) {
+        var skjekk = e.target;
+        var x = document.createElement('INPUT');
+        x.setAttribute('type', 'text');
+        x.setAttribute('name', 'I study');
+        x.setAttribute('id', 'other_feilds');
+        x.setAttribute('placeholder', 'Enter studyprogram');
+
+        innpakningEl.appendChild(x);
+
+
+        console.log(skjekk.id);
+
+      }
+
+      var innpakningEl = document.querySelector('#others');
+      var resetEl = document.querySelector("#reset");
+      var other_studysEl = document.querySelector("#other_studys");
+      resetEl.addEventListener("click", reset_value);
+
+    </script>
+
+    <!--position priority page-->
+    <div id="tab3" class="tab">
+      <h1>Position priority</h1>
+      <hr />
+      <p>Choose positions you favor by prioritisation. You don't have to choose all, but at least one</p>
+      <p>To change priority press the reset button</p>
+      <center><input class="reset" type="button" id="reset_positions" value="Reset"></center>
+      <h1 id="tilbakemelding"></h1>
+      <br />
+      <label name="position">
+        <p>Social media manager</p>
+        <div class="select">
+          <select id="Project_m" class="optionalfield" name="Position priority: Social media manager">
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+          </select>
+        </div>
+
+        <p>Event manager</p>
+        <div class="select">
+          <select id="Deputy_pm" class="optionalfield" name="Position priority: Event manager">
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+          </select>
+        </div>
+
+        <p>Photographer</p>
+        <div class="select">
+          <select id="Chief_eng" class="optionalfield" name="Position priority: Photographer">
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+          </select>
+        </div>
+
+        <p>Control</p>
+        <div class="select">
+          <select id="Deputy_ce" class="optionalfield" name="Position priority: Control">
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+          </select>
+        </div>
+
+
+        <p>Perception</p>
+        <div class="select">
+          <select id="Head_eco" class="optionalfield" name="Position priority: Perception">
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+          </select>
+        </div>
+
+        <p>DevOps</p>
+        <div class="select">
+          <select id="Head_mar" class="optionalfield" name="Position priority: DevOps">
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+          </select>
+        </div>
+
+        <p>AI</p>
+        <div class="select">
+          <select id="Group_ai" class="optionalfield" name="Position priority: AI">
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+          </select>
+        </div>
+
+        <p>Hardware</p>
+        <div class="select">
+          <select id="Group_har" class="optionalfield" name="Position priority: Hardware">
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+          </select>
+        </div>
+
+        <p>Graphical designer</p>
+        <div class="select">
+          <select id="Group_alp" class="optionalfield" name="Position priority: Graphical designer">
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+          </select>
+        </div>
+
+        <p>Writer</p>
+        <div class="select">
+          <select id="Group_con" class="optionalfield" name="Position priority: Writer">
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+          </select>
+        </div>
+
+        <p>AlphaPilot</p>
+        <div class="select">
+          <select id="Group_per" class="optionalfield" name="Position priority: AlphaPilot">
+            <option value="Not interested">Not interested</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+          </select>
+        </div>
+      </label>
+    </div>
+
+    <!--script to choose positions wanted-->
+    <!--Validation function is in js file-->
+    <script>
+      var project_mEl = document.querySelector("#Project_m");
+      var deputy_pmEl = document.querySelector("#Deputy_pm");
+      var chief_engEl = document.querySelector("#Chief_eng");
+      var deputy_ceEl = document.querySelector("#Deputy_ce");
+      var head_ecoEl = document.querySelector("#Head_eco");
+      var head_marEl = document.querySelector("#Head_mar");
+      var group_aiEl = document.querySelector("#Group_ai");
+      var group_perEl = document.querySelector("#Group_per");
+      var group_alpEl = document.querySelector("#Group_alp");
+      var group_conEl = document.querySelector("#Group_con");
+      var group_harEl = document.querySelector("#Group_har");
+      var resetEl = document.querySelector("#reset_positions");
+
+      project_mEl.addEventListener("click", check);
+      deputy_pmEl.addEventListener("click", check);
+      chief_engEl.addEventListener("click", check);
+      deputy_ceEl.addEventListener("click", check);
+      head_ecoEl.addEventListener("click", check);
+      head_marEl.addEventListener("click", check);
+      group_aiEl.addEventListener("click", check);
+      group_perEl.addEventListener("click", check);
+      group_alpEl.addEventListener("click", check);
+      group_conEl.addEventListener("click", check);
+      group_harEl.addEventListener("click", check);
+      resetEl.addEventListener("click", reset_prioity);
+
+      var sum = 0;
+      var ones = 0;
+      var twos = 0;
+      var threes = 0;
+      var fours = 0;
+      var fives = 0;
+      var sixs = 0;
+      var sevens = 0;
+      var eights = 0;
+      var nines = 0;
+      var tens = 0;
+      var elevens = 0;
+    </script>
+
+    <div id="tab4" class="tab">
+      <h1>Program experiencet</h1>
+      <hr />
+      <table>
+        <tr>
+          <th id="value">Value</th>
+          <th>definition</th>
+        </tr>
+        <tr>
+          <td id="value">1</td>
+          <td>Never been there before.</td>
+        </tr>
+        <tr>
+          <td id="value">2</td>
+          <td>Have started with topic where this tool is central / Have used the tool for some "play projects".</td>
+
+        </tr>
+        <tr>
+          <td id="value">3</td>
+          <td>Made good in subject where this tool is central / Is comfortable using the tool in own projects. Not much
+            experience with advanced features beyond what is taught in a subject.</td>
+
+        </tr>
+        <tr>
+          <td id="value">4</td>
+          <td>Has used the tool in major projects outside of school-related work and is very comfortable and secure.
+            Know some advanced features and use them.</td>
+        </tr>
+        <tr>
+          <td id="value">5</td>
+          <td>Very comfortable with advanced tools in the tool and often uses the tool in larger projects, often in
+            collaboration with other systems.</td>
+        </tr>
+      </table>
+
+      <label name="experience">
+        <p>C/C++, JavaScript or similar</p>
+        <div class="select">
+          <select id="C_C++_Java" class="program_exp" name="C/C++/Java or similar experience: ">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+        <p>Python</p>
+        <div class="select">
+          <select id="Python" class="program_exp" name="Python experience: ">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+        <p>Signal processing</p>
+        <div class="select">
+          <select id="Signal_processing" class="program_exp" name="Signal processing experience: ">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+        <p>Deep learning</p>
+        <div class="select">
+          <select id="Deep_learning" class="program_exp" name="Deep learning experience: ">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+
+        <p>Altium or similar</p>
+        <div class="select">
+          <select id="Altium_or_similar" class="program_exp" name="Altium or similar experience: ">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+
+        <p>RC design</p>
+        <div class="select">
+          <select id="RC_design" class="program_exp" name="RC design experience: ">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+
+        <p>Mechanical design</p>
+        <div class="select">
+          <select id="Mechanical_design" class="program_exp" name="Mechanical design experience: ">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+
+        <p>React</p>
+        <div class="select">
+          <select id="React" class="program_exp" name="React experience: ">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+
+        <p>Jenkins or other CI</p>
+        <div class="select">
+          <select id="Jenkins_or_other_CI" class="program_exp" name="Jenkins or other CI experience: ">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+
+        <p>Docker</p>
+        <div class="select">
+          <select id="Docker" class="program_exp" name="Docker experience: ">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+
+        <p>Airsim or Unreal Engine</p>
+        <div class="select">
+          <select id="Airsim_or_Unreal_Engine" class="program_exp" name="Airsim or Unreal Engine experience: ">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+
+        <p>CAD, Solid Works or similar</p>
+        <div class="select">
+          <select id="Solidworks" class="program_exp" name="CAD, Solid Works or similar">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+        <p>ROS (Robot Operating System)</p>
+        <div class="select">
+          <select id="ROS" class="program_exp" name=" ROS (Robot Operating System) experience: ">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+        <p>Linux/Ubuntu</p>
+        <div class="select">
+          <select id="Linux" class="program_exp" name="Linux/Ubuntu experience: ">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+        <p>Photoshop/Illustrator/inDesign</p>
+        <div class="select">
+          <select id="inDesign" class="program_exp" name="Photoshop, Illustrator or inDesign experience: ">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+
+        <p>VISMA E-accounting</p>
+        <div class="select">
+          <select id="VISMA" class="program_exp" name=" VISMA E-accounting experience: ">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+      </label>
+    </div>
+
+    <div id="tab5" class="tab">
+      <h1>Essay section</h1>
+      <p>You can answer the questions in English or Norwagian</p>
+      <hr>
+      <br>
+      <div>
+        <label>
+          <p>
+            What makes you a good team member?
+          </p>
+          <center> <textarea id="msg_1" rows="4" cols="70" name="What makes you a good team member?" class="essay"
+              placeholder="Enter Text Here"></textarea></center>
+        </label>
+        <br>
+
+        <label>
+          <p>
+            What makes you a good leader?
+          </p>
+          <center><textarea id="msg_2" rows="4" cols="70" name="What makes you a good leader?" class="essay"
+              placeholder="Enter Text Here"></textarea></center>
+        </label>
+        <br>
+
+        <label>
+          <p>
+            What motivates you to join Ascend NTNU?
+          </p>
+          <center><textarea id="msg_3" rows="4" cols="70" name="What motivates you to join Ascend NTNU?" class="essay"
+              placeholder="Enter Text Here"></textarea></center>
+        </label>
+      </div>
+      <center><input type="checkbox" id="box">I consent to AscendNTNU storing the information given <br /> until the
+        admission period is over</input></center>
+      <br>
+      <center><button type="submit" class="submit">
+          Submit
+
+        </button></center>
+      <br>
+      <center>
+        <div class="status"></div>
+      </center>
+    </div>
+
+    <!--Btn to next or previous page-->
+    <div style="overflow:auto;">
+      <div style="float:right;">
+        <button type="button" id="prevBtn" onclick="nextPrev(-1)">
+          Previous
+        </button>
+        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+      </div>
+    </div>
+    <!-- Circles which indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+    </div>
+  </form>
+
+  <!--Script to go through tabs-->
+  <!--Functions to through is in js file-->
+  <script>
+    var currentTab = 0 // Current tab is set to be the first tab (0)
+    showTab(currentTab) // Display the current tab
+  </script>
+</body>
+
+</html>
